@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>UWU Cafè</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel = "icon" href = "bilder\uwu.png" type = "image/x-icon">
+    </head>
+    <body>
+        <div class="header">
+            <img src="bilder\uwu3.png" alt="UWU" style="width:120px;height:120px;">
+        </div>
+        <div class="topnav" id="myHeader">
+            <h1>Bedrift Bestillnger</h1>
+        </div>
+        <div class="backbutton" id="myButtons">
+            <button onclick="window.location.href = 'index.html'" class="button2">⇦ Tilbake</button>
+        </div>
+        <p style="font-size: large;">Bedrift Bestillnger</p>
+        <div class="bestill" id="bestilling">
+            <form target="_blank">
+                <div class="bbdrift">
+                    <label for="fname">Bedrift</label><br>
+                </div>
+                <div class="bbselect">
+                    <select id="fname" name="fname" required>
+                        <option value="Velg Bedrift" selected>Velg Bedrift</option>
+                        <option value="Politi">Politi</option>
+                        <option value="Ambu">Ambu</option>
+                        <option value="Bilimport">Bilimport</option>
+                        <option value="Bilforhandler">Bilforhandler</option>
+                        <option value="Brann">Brann</option>
+                        <option value="SVV">SVV</option>
+                        <option value="Helitrans">Helitrans</option>
+                        <option value="Taxi">Taxi</option>
+                        <option value="Justitia">Justitia</option>
+                        <option value="Advokatene">Advokatene</option>
+                        <option value="VG">VG</option>
+                        <option value="Jakt & Fridtid">Jakt & Fridtid</option>
+                        <option value="EieMegler">EieMegler</option>
+                        <option value="NAF">NAF</option>
+                        <option value="Rafiqis">Rafiqis</option>
+                        <option value="Lowbrain">Lowbrain</option>
+                        <option value="MCForhandler">MCForhandler</option>
+                        <option value="BåtForhandler">BåtForhandler</option>
+                        <option value="Flamingo">Flamingo</option>
+                        <option value="Spaceout">Spaceout</option>
+                        <option value="Kattecafe">Kattecafe</option>
+                    </select>
+                </div>
+                <br>
+                <div class="bbmeny">
+                    <label for="lname">Antall / Meny</label>
+                </div>
+                <select id="antall" name="antall" required>
+                    <option value="Velg Antall" selected>Velg Antall</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+                <select id="lname" name="lname" required>
+                    <option value="Velg Meny" selected>Velg Meny</option>
+                    <option value="Krigermeny">Krigermeny</option>
+                    <option value="Kongemeny">Kongemeny</option>
+                    <option value="Slukk Tørsten">Slukk Tørsten</option>
+                    <option value="Bankraneren">Bankraneren</option>
+                    <option value="Cato Dalh’s spesial">Cato Dalh’s spesial</option>
+                    <option value="Bilimport menyen">Bilimport menyen</option>
+                    <option value="Willie’s vidundere">Willie’s vidundere</option>
+                    <option value="Frode’s Favoritter">Frode’s Favoritter</option>
+                    <option value="Løgen spesialen">Løgen spesialen</option>
+                    <option value="Tom’s terningkast">Tom’s terningkast</option>
+                </select><br><br>
+                <div class="bbarea">
+                    <label for="kommenta">Kommentar:</label>
+                </div>
+                <textarea id="kommenta" name="kommenta" style="width:226px; height:100px;">
+                </textarea>
+                <div class="bknapp" id="myButtons">
+                    <button onclick="sendWebHOK(fname, lname, antall, kommenta)" class="button2">Send Bestilling</button>
+                </div>
+            </form>
+                
+            <script type="text/javascript">
+                function sendWebHOK(name, comment, antall, kommenta){
+                    var Bname = document.getElementById('fname').value;
+                    var Bcom = document.getElementById('lname').value;
+                    var Ba = document.getElementById('antall').value;
+                    var Bkommenta = document.getElementById('kommenta').value;
+                    var Bantall = Ba + "x " + " " + Bcom
+                    fetch('https://discord.com/api/webhooks/1089976675497934909/DqGyX3Stn1wgehoUkGrr2gNeRDG55YrXehJDqQVLqVvwgpqqUt9IdJW0e4zn1l2bSgGN',
+                    {
+                        method: 'post',
+                        headers: {
+                        'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                        // the username to be displayed
+                        username: 'UwU',
+                        // the avatar to be displayed
+                        avatar_url:
+                            'https://media.discordapp.net/attachments/966394042491486208/1089929445839732756/Uwu_cafe_logo.webp?width=587&height=587',
+                        // contents of the message to be sent
+                        content:
+                            '<@&1089976491753881702> Er nå kommet en ny Bedrifts bestilling:',
+                        // enable mentioning of individual users or roles, but not @everyone/@here
+                        allowed_mentions: {
+                            parse: ['users', 'roles'],
+                        },
+                        // embeds to be sent
+                        embeds: [
+                            {
+                            // decimal number colour of the side of the embed
+                            color: 16711935,
+                            // author
+                            // - icon next to text at top (text is a link)
+                            author: {
+                                name: 'UwU Bestillinger',
+                                //icon_url: 'uwu.png',
+                            },
+                            // embed title
+                            // - link on 2nd row
+                            title: 'Ny Bestilling',
+                            // custom embed fields: bold title/name, normal content/value below title
+                            // - located below description, above image.
+                            fields: [
+                                {
+                                name: 'Bedrifts Navn:',
+                                value: Bname,
+                                },
+                                {
+                                name: 'Bestilling:',
+                                value: Bantall,
+                                },
+                                {
+                                name: 'Kommentar:',
+                                value: Bkommenta,
+                                },
+                            ],
+                            // footer
+                            // - icon next to text at bottom
+                            footer: {
+                                text: 'Made BY FalZz#0001',
+
+                            },
+                            },
+                        ],
+                        }),
+                    }
+                    );
+                    
+                }
+                
+
+            </script>
+            
+        </div>
+
+    
+    
+    </body>
+
+
+
+
+</html>

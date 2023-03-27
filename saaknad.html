@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>UWU Cafè</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel = "icon" href = "bilder\uwu.png" type = "image/x-icon">
+    </head>
+    <body>
+        <div class="header">
+            <img src="bilder\uwu3.png" alt="UWU" style="width:120px;height:120px;">
+        </div>
+        <div class="topnav" id="myHeader">
+            <h1>Søknad</h1>
+        </div>
+        <div class="backbutton" id="myButtons">
+            <button onclick="window.location.href = 'index.html'" class="button2">⇦ Tilbake</button>
+        </div>
+        <p>Kommer Kanskje senere (om jeg gidder)</p>
+
+        
+        <script>
+            window.onscroll = function() {myFunction()};
+            
+            var header = document.getElementById("myHeader");
+            var sticky = header.offsetTop;
+            
+            function myFunction() {
+              if (window.pageYOffset > sticky) {
+                header.classList.add("sticky");
+              } else {
+                header.classList.remove("sticky");
+              }
+            }
+        </script>
+    
+    
+    </body>
+
+
+
+
+</html>
