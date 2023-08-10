@@ -1,29 +1,6 @@
 <!DOCTYPE html>
 
 <html>
-    <script>
-        var countDownDate = new Date("june 21, 2023 20:45:16").getTime();
-        
-        var x = setInterval(function() {
-        
-
-          var now = new Date().getTime();
-        
-          var distance = countDownDate - now;
-        
-          var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-          var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-          var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-          var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        
-          document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-          + minutes + "m " + seconds + "s ";
-          if (distance < 0) {
-            clearInterval(x);
-            document.getElementById("demo").innerHTML = "EXPIRED";
-          }
-        }, 1000);
-    </script>
     <head>
         <meta charset="UTF-8">
         <title>UWU Cafè</title>
@@ -40,10 +17,8 @@
         <br><br><br><br>
         <p style="font-size: large;">TigerStadenRP UwU Cafè</p>
         <p>Vi er en bedrift som selger god mat</p>
-        <p>ute av drift kommer tilbake om</p>
-        <p id="demo">u</p>
         <div class="buttons" id="myButtons">
-            <button onclick="window.location.href = 'velg.html'" class="button">Menyer</button>
+            <button onclick="window.location.href = 'meny.html'" class="button">Menyer</button>
             <button onclick="window.location.href = 'bestill.html'" class="button">Bestillinger</button>
             <button onclick="window.location.href = 'ansatte.html'" class="button">Ansatte</button>
             <button onclick="window.location.href = 'saaknad.html'" class="button">Søknad</button>
